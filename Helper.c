@@ -6,7 +6,7 @@
 /*   By: aez-zoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 01:12:58 by aez-zoui          #+#    #+#             */
-/*   Updated: 2024/05/12 11:34:21 by aez-zoui         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:13:14 by aez-zoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,6 @@ int	ft_atoi_of(char *nbr)
 			return (0);
 	}
 	return (res * sign);
-}
-
-void	ft_sendbits(int pid, char c)
-{
-	int	i;
-
-	i = 0;
-	while (i < 8)
-	{
-		if ((c & (1 << i)))
-			kill(pid, SIGUSR1);
-		else
-			kill(pid, SIGUSR2);
-		i++;
-		usleep(500);
-	}
 }
 
 void	ft_putnbr(int nb)

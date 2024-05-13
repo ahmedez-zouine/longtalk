@@ -1,5 +1,5 @@
 #ifndef MINITALK_BONUS
-#define MINITALK_BONUS
+# define MINITALK_BONUS
 
 #include <signal.h>
 #include <unistd.h>
