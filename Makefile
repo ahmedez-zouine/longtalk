@@ -1,4 +1,4 @@
-# **************************************************************************** #
+# *************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,7 +6,7 @@
 #    By: aez-zoui <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/12 12:00:09 by aez-zoui          #+#    #+#              #
-#    Updated: 2024/05/14 15:59:59 by aez-zoui         ###   ########.fr        #
+#    Updated: 2024/05/14 17:53:37 by aez-zoui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,12 +40,13 @@ $(B_CLIENT): $(B_CL)
 
 $(B_SERVER): $(B_SSR)
 	$(GCC) $(FLAGS) $(B_SSR) -o server_bonus
-clean:
-	$(RM) $(SUP)
-fclean: clean
-	$(RM) $(SERVER) $(CLIENT)
 
-re: fclean
-	make all
-	make bonus
+clean:
+	@echo "ObJ fille removed"
+
+fclean:
+	$(RM) $(SUP)
+
+re: fclean all bonus
+
 .PHONY: all clean fclean re

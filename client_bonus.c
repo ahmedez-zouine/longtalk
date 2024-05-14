@@ -6,7 +6,7 @@
 /*   By: aez-zoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 23:57:11 by aez-zoui          #+#    #+#             */
-/*   Updated: 2024/05/13 23:57:13 by aez-zoui         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:59:35 by aez-zoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_sendbits(int pid, char c)
 	i = 0;
 	while (i <= 7)
 	{
-		b = c & ( 1 << i);
+		b = c & (1 << i);
 		if (b)
 			kill(pid, SIGUSR1);
 		else
@@ -36,12 +36,12 @@ void	ft_sendbits(int pid, char c)
 	}
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	int	pid;
+	int		pid;
+	int		i;
 	char	*string;
-	int	i;
-
+//hgg
 	if (argc != 3)
 	{
 		write(1, "Error in the Argmnt\n", 20);
@@ -49,10 +49,7 @@ int main(int argc, char *argv[])
 	}
 	pid = ft_atoi_of(argv[1]);
 	if (pid == 0 || pid == -1)
-	{
-		write(1, "Error in the PID\n", 15);
 		exit(1);
-	}
 	string = argv[2];
 	signal(SIGUSR1, ft_conferm);
 	i = 0;

@@ -38,8 +38,8 @@ void	ft_bit_handler(int signbr, siginfo_t *info, void *context)
 
 int	main(void)
 {
-	int	pid;
-	struct sigaction sact;
+	int					pid;
+	struct sigaction	sact;
 
 	pid = getpid();
 	write(1, "pid :", 5);

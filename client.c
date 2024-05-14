@@ -6,7 +6,7 @@
 /*   By: aez-zoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 01:11:31 by aez-zoui          #+#    #+#             */
-/*   Updated: 2024/05/14 16:08:22 by aez-zoui         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:48:52 by aez-zoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,18 @@ void	ft_sendbits(int pid, char c)
 int	main(int ac, char **argv)
 {
 	size_t	i;
-	int	pid;
+	int		pid;
 	char	*string;
 
 	if (ac != 3)
 	{
-		write(1, "Try Use the Argmant like [IPD] [MSG]\n",37); 
-		return (1);
+		write(1, "Try Use the Argmant like [IPD] [MSG]\n", 37);
+		exit(1);
 	}
 	i = 0;
 	pid = ft_atoi_of((char *)argv[1]);
 	if (pid == 0 || pid == -1)
-		return (1);
+		exit(1);
 	else
 	{
 		string = argv[2];

@@ -6,7 +6,7 @@
 /*   By: aez-zoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 01:12:58 by aez-zoui          #+#    #+#             */
-/*   Updated: 2024/05/13 17:13:14 by aez-zoui         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:38:09 by aez-zoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi_of(char *nbr)
 	while (nbr[i] >= '0' && nbr[i] <= '9')
 	{
 		res = (res * 10) + (nbr[i++] - '0');
-		if (res > INT_MAX || res < INT_MIN)
+		if (res > 2147483647 || res < -2147483648)
 			return (0);
 	}
 	return (res * sign);
@@ -42,8 +42,9 @@ int	ft_atoi_of(char *nbr)
 void	ft_putnbr(int nb)
 {
 	char	c;
+
 	if (nb > 9)
 		ft_putnbr(nb / 10);
 	c = (nb % 10) + '0';
-	write (1, &c, 1);
+	write(1, &c, 1);
 }

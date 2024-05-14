@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server_bonus.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aez-zoui <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/14 17:23:20 by aez-zoui          #+#    #+#             */
+/*   Updated: 2024/05/14 17:23:22 by aez-zoui         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk_bonus.h"
 
 void	ft_handler(int sig, siginfo_t *info, void *context)
@@ -26,11 +38,11 @@ void	ft_handler(int sig, siginfo_t *info, void *context)
 	}
 }
 
-int main(void)
+int	main(void)
 {
-	struct sigaction sact;
+	struct sigaction	sact;
 
-	write (1, "pid :", 5);
+	write(1, "pid :", 5);
 	ft_putnbr(getpid());
 	write(1, "\n", 1);
 	sact.sa_sigaction = ft_handler;
