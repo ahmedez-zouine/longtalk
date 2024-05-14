@@ -4,8 +4,15 @@ void	ft_handler(int sig, siginfo_t *info, void *context)
 {
 	static int	bit;
 	static char	c;
+	static int	pid;
 
 	(void)context;
+	if (pid != info->si_pid)
+	{
+		bit = 0;
+		c = 0;
+		pid = info->si_pid;
+	}
 	if (sig == SIGUSR1)
 		c = c | (1 << bit);
 	bit++;
@@ -23,6 +30,7 @@ int main(void)
 {
 	struct sigaction sact;
 
+	write (1, "pid :", 5);
 	ft_putnbr(getpid());
 	write(1, "\n", 1);
 	sact.sa_sigaction = ft_handler;

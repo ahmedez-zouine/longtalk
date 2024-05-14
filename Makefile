@@ -6,7 +6,7 @@
 #    By: aez-zoui <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/12 12:00:09 by aez-zoui          #+#    #+#              #
-#    Updated: 2024/05/13 23:09:32 by aez-zoui         ###   ########.fr        #
+#    Updated: 2024/05/14 15:59:59 by aez-zoui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SSR= Helper.c server.c
 B_SSR= Helper.c server_bonus.c
 B_CL= Helper.c client_bonus.c
 
+SUP= server client server_bonus client_bonus
 
 all: $(SERVER) $(CLIENT)
 
@@ -40,5 +41,11 @@ $(B_CLIENT): $(B_CL)
 $(B_SERVER): $(B_SSR)
 	$(GCC) $(FLAGS) $(B_SSR) -o server_bonus
 clean:
+	$(RM) $(SUP)
+fclean: clean
 	$(RM) $(SERVER) $(CLIENT)
 
+re: fclean
+	make all
+	make bonus
+.PHONY: all clean fclean re

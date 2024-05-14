@@ -6,7 +6,7 @@
 /*   By: aez-zoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 01:11:31 by aez-zoui          #+#    #+#             */
-/*   Updated: 2024/05/13 23:52:41 by aez-zoui         ###   ########.fr       */
+/*   Updated: 2024/05/14 16:08:22 by aez-zoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_sendbits(int pid, char c)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(500);
+		usleep(600);
 		i++;
 	}
 }
@@ -50,8 +50,8 @@ int	main(int ac, char **argv)
 		string = argv[2];
 		while (string[i])
 			ft_sendbits(pid, string[i++]);
-		ft_sendbits(pid, '\0');
 		ft_sendbits(pid, '\n');
+		ft_sendbits(pid, '\0');
 	}
 	return (0);
 }
