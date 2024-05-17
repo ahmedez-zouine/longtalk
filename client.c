@@ -6,7 +6,7 @@
 /*   By: aez-zoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 01:11:31 by aez-zoui          #+#    #+#             */
-/*   Updated: 2024/05/14 17:48:52 by aez-zoui         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:22:16 by aez-zoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ int	main(int ac, char **argv)
 	i = 0;
 	pid = ft_atoi_of((char *)argv[1]);
 	if (pid == 0 || pid == -1)
+	{
+		write(1, "Error in pid\n", 14);
 		exit(1);
+	}
 	else
 	{
 		string = argv[2];

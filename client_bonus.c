@@ -6,7 +6,7 @@
 /*   By: aez-zoui <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 23:57:11 by aez-zoui          #+#    #+#             */
-/*   Updated: 2024/05/14 17:59:35 by aez-zoui         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:23:26 by aez-zoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char *argv[])
 	int		pid;
 	int		i;
 	char	*string;
-//hgg
+
 	if (argc != 3)
 	{
 		write(1, "Error in the Argmnt\n", 20);
@@ -49,7 +49,10 @@ int	main(int argc, char *argv[])
 	}
 	pid = ft_atoi_of(argv[1]);
 	if (pid == 0 || pid == -1)
+	{
+		write(1, "Error in the pid\n", 17);
 		exit(1);
+	}
 	string = argv[2];
 	signal(SIGUSR1, ft_conferm);
 	i = 0;
